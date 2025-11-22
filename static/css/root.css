@@ -46,9 +46,10 @@
 
 /*非常吃性能,低配手机会卡顿*/
 /*卡片模糊背景＋黑色透明卡片+白色svg**/
+/* == 主题变量定义（仅用于颜色/滤镜，不用于背景图）== */
+
 html {
     --name: 主题1;
-    --main_bg_color: url(../img/background.jpg);
     --main_text_color: #eeeeee;
     --gradient: linear-gradient(120deg, #bd34fe, #e0321b 30%, #41d1ff 60%);
     --purple_text_color: #747bff;
@@ -62,14 +63,13 @@ html {
     --card_filter: 15px;
     --back_filter: 0px;
     --back_filter_color: #00000030;
-     --fill:#ffffff;
+    --fill: #ffffff;
 }
 
 html {
 
     /*图片模糊背景＋白色透明卡片+黑色svg*/
     --name: 主题2;
-    --main_bg_color: url(../img/background.jpg);
     --main_text_color: #000000;
     --gradient: linear-gradient(120deg, #bd34fe, #e0321b 30%, #41d1ff 60%);
     --purple_text_color: #747bff;
@@ -88,7 +88,6 @@ html {
 
 html {
     /*蓝色渐变+黑色svg**/
-
     --name: 主题3;
     --main_bg_color: linear-gradient(50deg, #a2d1ff, #ffffff);
     --main_text_color: #000000;
@@ -132,7 +131,6 @@ html {
 html {
     /*图片模糊背景＋黑色透明卡片+白色svg**/
     --name: 主题5;
-    --main_bg_color: url(../img/background.jpg);
     --main_text_color: #eeeeee;
     --gradient: linear-gradient(120deg, #bd34fe, #e0321b 30%, #41d1ff 60%);
     --purple_text_color: #747bff;
@@ -147,4 +145,23 @@ html {
     --back_filter: 19px;
     --back_filter_color: #00000030;
     --fill:#ffffff;
+}
+
+/* =============== 背景图设置（唯一来源）=============== */
+body, html {
+    /* 使用背景图，不使用 --main-bg-color */
+    background-image: url('https://t.alcy.cc/pc');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* 响应式移动端背景 */
+@media (max-width: 768px) {
+    body, html {
+        background-image: url('https://t.alcy.cc/mp');
+    }
 }
